@@ -1,10 +1,10 @@
 package com.nagarro.java.training.assignment.io;
 import com.nagarro.java.training.assignment.validation.*;
 import com.nagarro.java.training.assignment.constants.*;
+import com.nagarro.java.training.assignment.dlo.Imported;
 import com.nagarro.java.training.assignment.dlo.Item;
-import com.nagarro.java.training.assignment.service.interfaces.Imported;
-import com.nagarro.java.training.assignment.service.interfaces.Manufactured;
-import com.nagarro.java.training.assignment.service.interfaces.Raw;
+import com.nagarro.java.training.assignment.dlo.Manufactured;
+import com.nagarro.java.training.assignment.dlo.Raw;
 import com.nagarro.java.training.assignment.validation.InputValidation;
 import java.util.*;
 

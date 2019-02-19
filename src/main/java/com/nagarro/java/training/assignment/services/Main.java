@@ -1,9 +1,9 @@
 package com.nagarro.java.training.assignment.services;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.util.List;
 import com.nagarro.java.training.assignment.dlo.Item;
-import com.nagarro.java.training.assignment.io.UserInput;
 import com.nagarro.java.training.assignment.io.ItemDisplay;
+import com.nagarro.java.training.assignment.service.interfaces.*;
 
 /**
  * Main.java-A starting class\
@@ -15,17 +15,8 @@ import com.nagarro.java.training.assignment.io.ItemDisplay;
  */
 public class Main {
 	public static void main(String[] args) {
-		ArrayList<Item> list = new ArrayList<Item>();
-		Scanner scr = new Scanner(System.in);
-		char entermore = 'n';
-		/*loop for user to enter no of item */
-		do {
-			UserInput input = new UserInput();
-			list.add(input.inputItemDetails());
-			System.out.println("DO YOU WANT TO ENTER ITEM(Y/N)");
-			entermore = scr.nextLine().charAt(0);
-		} while (entermore == 'y' || entermore == 'Y');
-		/*Main calling output class*/
-		ItemDisplay output=new ItemDisplay(list);
+		ItemSevicesImplementation input = new ItemSevicesImplementation();
+		List<Item> listOfItem = input.enterDetails();
+		ItemDisplay output = new ItemDisplay(listOfItem);
 	}
 }

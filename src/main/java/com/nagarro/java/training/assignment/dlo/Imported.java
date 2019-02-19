@@ -1,19 +1,19 @@
-package com.nagarro.java.training.assignment.service.interfaces;
+package com.nagarro.java.training.assignment.dlo;
 
-import com.nagarro.java.training.assignment.dlo.Item;
 import com.nagarro.java.training.assignment.validation.Type;
+
 /**
  * class Imported used to calculate tax if type is imported
  *
  */
-public class Imported extends Item implements ItemServices {
+public class Imported extends Item {
 
-	public Imported(String name,Type type,double price,int quantity)
-	{
-		super(name,type,price,quantity);
-		calculateTax();
+	public Imported(String name, Type type, double price, int quantity) {
+		super(name, type, price, quantity);
+
 	}
-	public void calculateTax() {
+
+	public double getTax() {
 		double tax1 = (0.1) * price;
 		double s = tax1 + price;
 		if (s <= 100) {
@@ -27,7 +27,8 @@ public class Imported extends Item implements ItemServices {
 			tax = tax1 + k;
 			totalPrice = (k + s) * quantity;
 		}
-		 setTax(tax);
-			setTotalPrice(totalPrice);
+
+		return tax;
 	}
+
 }
